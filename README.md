@@ -1,0 +1,1 @@
+## Bloccit: A Ruby on Rails app where people can post, vote on, share, and save links and comments. 
