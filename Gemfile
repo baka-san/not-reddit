@@ -56,3 +56,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
 end
+
+gem 'better_errors'
+gem 'binding_of_caller'
+
+gem 'bootstrap-sass'
