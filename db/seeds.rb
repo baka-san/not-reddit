@@ -1,5 +1,9 @@
 require 'random_data'
 
+# Create a unique post
+	
+unique_post = Post.find_or_create_by!(title: 'This is a unique title', body: 'This is a unique body')
+
 # Create Posts
 50.times do
   Post.create!(
@@ -7,7 +11,12 @@ require 'random_data'
     body:   RandomData.random_paragraph
   )
 end
+
 posts = Post.all
+
+# Create a unique comment
+Comment.find_or_create_by!(post: unique_post, body: 'This is a unique body')
+
 
 # Create Comments
 100.times do
