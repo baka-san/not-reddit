@@ -96,11 +96,6 @@ RSpec.describe PostsController, type: :controller do
     let(:new_title) { RandomData.random_sentence }
     let(:new_body) { RandomData.random_paragraph }
 
-    # it "returns http success" do
-    #   put :update, params: { id: my_post.id, post: { title: new_title, body: new_body } }
-    #   expect(response).to have_http_status(:success)
-    # end
-
     it "updates @post with new info" do
       put :update, params: { id: my_post.id, post: { title: new_title, body: new_body } }
 
@@ -118,39 +113,20 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "DELETE destroy" do
-    # let(:new_title) { RandomData.random_sentence }
-    # let(:new_body) { RandomData.random_paragraph }
 
-    # it "returns http success" do
-    #   put :update, params: { id: my_post.id, post: { title: new_title, body: new_body } }
-    #   expect(response).to have_http_status(:success)
+    # it "deletes the post" do
+    #   expect { delete :destroy, params: {id: my_post.id} }.to change(Post, :count).by(1)
     # end
 
-    it "deletes the post" do
-
-
-
+    it "deletes the correct post" do
+      delete :destroy, params: { id: my_post.id }
+      count = Post.where({id: my_post.id}).size
+      expect(count).to eq 0
     end
 
     it "redirects to the posts index" do
-
-
-    end
-
-
-    it "updates @post with new info" do
-      put :update, params: { id: my_post.id, post: { title: new_title, body: new_body } }
-
-      post_instance = assigns(:post)
-
-      expect(post_instance.id).to eq my_post.id
-      expect(post_instance.title).to eq new_title
-      expect(post_instance.body).to eq new_body
-    end
-
-    it "redirects to @post" do
-      put :update, params: { id: my_post.id, post: { title: new_title, body: new_body } }
-      expect(response).to redirect_to my_post
+      delete :destroy, params: { id: my_post.id }
+      expect(response).to redirect_to posts_path
     end
   end
 
