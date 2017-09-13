@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     # get 'posts/new'
     # get 'posts/edit'
     resources :posts, except: [:index]
+    resources :sponsored_posts, except: [:index]
   end
 
 
