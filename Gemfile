@@ -62,3 +62,6 @@ gem 'better_errors'
 gem 'binding_of_caller'
 
 gem 'bootstrap-sass'
+
+# Used for encrypting passwords
+gem 'bcrypt'

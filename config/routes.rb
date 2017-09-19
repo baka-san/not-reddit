@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     resources :posts, except: [:index]
   end
 
-
-
   # get 'welcome/about'
   get 'about' => 'welcome#about'
 
@@ -16,4 +14,5 @@ Rails.application.routes.draw do
   # get 'welcome/index'
   root 'welcome#index'
 
+  resources :users, only: [:new, :create]
 end
