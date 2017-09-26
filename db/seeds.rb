@@ -19,10 +19,26 @@ topics = Topic.all
   )
 end
 
+# Create Grant/admin
 user = User.first
 user.update_attributes!(
   name: 'Grant',
   email: 'gsbackes@gmail.com', 
+  password: 'password'
+)
+
+# Create an admin user
+admin = User.create!(
+  name:     'Admin User',
+  email:    'admin@gmail.com',
+  password: 'password',
+  role:     'admin'
+)
+
+# Create a member
+member = User.create!(
+  name:     'Member User',
+  email:    'member@gmail.com',
   password: 'password'
 )
 
