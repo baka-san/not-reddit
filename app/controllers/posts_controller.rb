@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
 
+  # admin:  show, create, update(all), destroy(all)
+  # mod:    show, create, update(all), destroy(own)
+  # member: show, create, update(own), destroy(own)
+  # Guest:  show, xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
   before_action :require_sign_in, except: :show
   before_action :authorize_user, except: [:show, :new, :create]
+  before_action :admin_only, only: [:destroy]
 
   def show
   	@post = Post.find(params[:id])
@@ -62,6 +68,14 @@ class PostsController < ApplicationController
     end
 
     def authorize_user
+      post = Post.find(params[:id])
+      unless current_user == post.user || current_user.admin? || current_user.moderator?
+        flash[:alert] = "You must be an admin or mod to do that."
+        redirect_to [post.topic, post]
+      end
+    end
+
+    def admin_only
       post = Post.find(params[:id])
       unless current_user == post.user || current_user.admin?
         flash[:alert] = "You must be an admin to do that."
