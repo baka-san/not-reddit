@@ -24,7 +24,8 @@ user = User.first
 user.update_attributes!(
   name: 'Grant',
   email: 'gsbackes@gmail.com', 
-  password: 'password'
+  password: 'password',
+  role: 'admin'
 )
 
 # Create an admin user
@@ -53,13 +54,15 @@ users = User.all
     user: users.sample
   )
 end
+
 posts = Post.all
 
 # Create Comments
 100.times do
   Comment.create!(
     post: posts.sample,
-    body: RandomData.random_paragraph
+    body: RandomData.random_paragraph,
+    user: users.sample
   )
 end
 
