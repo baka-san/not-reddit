@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :votes, dependent: :destroy
 	belongs_to :topic
   belongs_to :user
-  # after_save :update_rank
+  after_save :update_rank
 
   default_scope { order('rank DESC') }
 	
