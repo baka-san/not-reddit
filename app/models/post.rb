@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 	belongs_to :topic
   belongs_to :user
   after_save :update_rank
+  after_create :create_vote
 
   default_scope { order('rank DESC') }
 	
@@ -31,4 +32,10 @@ class Post < ApplicationRecord
     new_rank = points + age_in_days
     update_attribute(:rank, new_rank)
   end
+
+  private
+
+    def create_vote
+      user.votes.create(post_id: self.id, value: 1)
+    end
 end

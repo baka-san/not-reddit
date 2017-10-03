@@ -77,5 +77,12 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "#create_vote" do
+    it "checks for a vote on the new post with correct attributes and user" do
+      vote = Vote.where("user_id = ? AND post_id = ? AND value = ?", user.id, post.id, 1)
+      expect(vote).to exist
+    end
+  end
+
 end
 
