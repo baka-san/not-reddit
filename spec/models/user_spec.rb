@@ -19,8 +19,8 @@ RSpec.describe User, type: :model do
 
   # Shoulda tests for posts
   it { is_expected.to have_many(:posts) }
-
   it { is_expected.to have_many(:comments) }
+  it { is_expected.to have_many(:votes) }
 	
 	describe "attributes" do
 	  it "should have name and email attributes" do
