@@ -65,3 +65,6 @@ gem 'bootstrap-sass'
 
 # Used for encrypting passwords
 gem 'bcrypt'
+
+# Used for privatising API keys and passwords, environmental variables
+gem 'figaro', '1.0'
