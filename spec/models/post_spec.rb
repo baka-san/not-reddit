@@ -78,5 +78,12 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe '#auto_favorite' do
+    it 'automatically creates a favorite for a post on creation' do
+      post = topic.posts.create!(user_id: user.id, title: title, body: body)
+      expect(user.favorites.find_by_post_id(post.id)).not_to be_nil
+    end
+  end
+
 end
 

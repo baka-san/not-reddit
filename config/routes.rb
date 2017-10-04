@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  default_url_options :host => "localhost"
+  
   resources :topics do
     resources :posts, except: [:index]
   end

@@ -6,6 +6,7 @@ class Post < ApplicationRecord
 	belongs_to :topic
   belongs_to :user
   after_save :update_rank
+  after_create :auto_favorite
 
   default_scope { order('rank DESC') }
 	
@@ -27,10 +28,13 @@ class Post < ApplicationRecord
   end
 
   def update_rank
-    # total_points + (date - standard)
-    # Why not this.created_at, this.points, and this.update_attributes? Inferred? When is this inferred in a method?
     age_in_days = (created_at - Time.new(1970,1,1)) / 1.day.seconds
     new_rank = points + age_in_days
     update_attribute(:rank, new_rank)
+  end
+
+  def auto_favorite
+    user.favorites.create!(post_id: self.id)
+    FavoriteMailer.new_post(self.user, self).deliver_now
   end
 end
