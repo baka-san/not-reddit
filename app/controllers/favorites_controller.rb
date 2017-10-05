@@ -2,8 +2,8 @@ class FavoritesController < ApplicationController
   before_action :require_sign_in
 
   def create
-    post = Post.find(params[:post_id])
-    favorite = current_user.favorites.create!(post_id: post.id)
+    post = Post.find(favorites_params[:post_id])
+    favorite = current_user.favorites.create!(favorites_params[:post_id])
 
     if favorite
       flash[:notice] = "Added to favorites"
