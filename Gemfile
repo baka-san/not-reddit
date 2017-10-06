@@ -56,6 +56,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
   gem 'shoulda'
+  # Used for factories
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 gem 'better_errors'
@@ -68,3 +70,4 @@ gem 'bcrypt'
 
 # Used for privatising API keys and passwords, environmental variables
 gem 'figaro', '1.0'
+

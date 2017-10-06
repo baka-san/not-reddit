@@ -2,8 +2,8 @@ class FavoritesController < ApplicationController
   before_action :require_sign_in
 
   def create
-    post = Post.find(favorites_params[:post_id])
-    favorite = current_user.favorites.create!(favorites_params[:post_id])
+    post = Post.find(favorite_params[:post_id])
+    favorite = current_user.favorites.create!(favorite_params)
 
     if favorite
       flash[:notice] = "Added to favorites"
@@ -15,8 +15,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:post_id])
-    favorite = current_user.favorites.find(params[:id])
+    post = Post.find(favorite_params[:post_id])
+    favorite = Favorite.where(user_id: current_user.id, post_id: post.id).first
+    # favorite = current_user.favorites.find(favorite_params[:post_id])
   
     if favorite.destroy
       flash[:notice] = "Post unfavorited."
@@ -27,7 +28,8 @@ class FavoritesController < ApplicationController
   end
 
   private
-    def favorites_params
+    def favorite_params
+      # params.fetch(:favorite, {}).permit(:post_id)
       params.permit(:post_id)
     end
 end

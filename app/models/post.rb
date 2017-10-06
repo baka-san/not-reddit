@@ -6,9 +6,10 @@ class Post < ApplicationRecord
 	belongs_to :topic
   belongs_to :user
   after_save :update_rank
-  after_create :auto_favorite
+  # after_create :auto_favorite
 
   default_scope { order('rank DESC') }
+  scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
 	
 	validates :title, length: { minimum: 5 }, presence: true
 	validates :body, length: { minimum: 20 }, presence: true
