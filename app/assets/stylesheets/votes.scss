@@ -1,4 +1,27 @@
-.vote-arrows {
-  width: 40px;
-  text-align: center;
+$title-color: rgb(51,122,196);
+$button-color:  rgb(51,122,196);
+
+
+.voting-arrows .glyphicon {
+  color: $button-color;
+}
+
+.points-up {
+  color: green;
+  padding-left: 2px !important;
+}
+
+.points-down {
+  color: red;
+  padding-left: 2px !important;
+}
+
+// Fix vertical align of total points
+.total-points {
+  padding-right: 0px !important;
+
+  * {
+    margin: 0px;
+    color: $button-color;
+  }
 }

@@ -1,3 +1,59 @@
 // Place all the styles related to the Topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$title-color: rgb(51,122,196);
+$button-color:  rgb(51,122,196);
+
+.path-page {
+  color: $title-color !important;
+}
+
+.vertical-center {
+  display: flex !important;
+  align-items: center !important;
+  // justify-content: center !important;
+}
+
+.vertical-bottom {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
+// ===========================
+
+.topic-info {
+  .topic-title {
+    color: $title-color;
+  }
+
+  .user-edit-controls {
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+}
+
+.topic-main {
+
+  .voting-controls > * {
+    padding-left: 0px !important;  
+  }
+
+  .voting-controls {
+    padding-right: 0px !important;
+  }
+
+  .posts {
+    // height: 100px !important;
+    padding-top: 18px;
+    // display: flex;
+
+    // * {
+    //   height: 50px !important;
+    // }
+
+    .post-title {
+      color: $title-color;
+    }
+  }
+}

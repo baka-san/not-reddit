@@ -1,19 +1,29 @@
-<div>
-  <%= render partial: 'votes/voting', locals: { post: @post } %>
-  <h1>
-    <%= @post.title %> <br>
-    <small>
-      submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
-    </small>
-  </h1>
+<p class="page-path">
+  <%= link_to "topics", topics_path %> 
+  > <%= link_to @post.topic.name, @post.topic %> 
+  > <%= @post.title %> 
+</p> 
+
+
+<div class="row post-info">
+  <div class="col-xs-1 voting-controls">
+   <%= render partial: 'votes/voting', locals: { post: @post } %>
+  </div>
+  <div class="col-xs-10 col-xs-push-1 col-md-11 col-md-push-0 post-details">
+    <h2>
+      <strong class="post-title"><%= @post.title %> </strong><br>
+      <small><%= @post.body %></small>
+    </h2>
+    
+
+    <p>submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %></p>
+  </div>
 </div>
 
-<div class="row">
+<div class="row post-body">
   <div class="col-md-8">
-    <p><%= @post.body %></p>
-
     <div>
-      <h3>Comments</h3>
+      <h2>Comments</h3>
       <%= render @post.comments %>
     </div>
 
