@@ -19,17 +19,17 @@ RSpec.describe Comment, type: :model do
 
   describe "attributes" do
     it "has a body attribute" do
-      comment.user = user
-      comment.post = post
+      # comment.user = user
+      # comment.post = post
       expect(comment).to have_attributes(body: comment.body)
-      expect(comment).to have_attributes(post: post)
+      expect(comment).to have_attributes(post: comment.post)
     end
   end
 
   describe "after_create" do
     before do
-      # @another_comment = Comment.new(body: 'Comment Body', post: post, user: user)
-      @another_comment = create(:comment)
+      @another_comment = Comment.new(body: 'Comment Body', post: post, user: user)
+      # @another_comment = build(:comment)
     end
   
     it "sends an email to users who have favorited the post" do
