@@ -17,10 +17,53 @@
       </div>
     </div>
   </div>
+
+  <div class="col-xs-12">
+    <% if no_posts? %>
+      <h2><%= @user.name %>'s posts <br>
+        <small><%= @user.name %> has not submitted any posts yet.</small>
+      </h2>
+    <% else %>
+      <h2><%= @user.name %>'s posts</h2>
+      <% @user.posts.each do |post| %>
+        <div class="col-xs-12 col-md-8 posts">
+          <%= render partial: 'posts/post_info', locals: { post: post } %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12">
+    <% if @user.comments.empty? %>
+      <h2><%= @user.name %>'s comments <br>
+        <small><%= @user.name %> has not made any comments yet.</small>
+      </h2>
+    <% else %>
+      <h2><%= @user.name %>'s comments </h2>
+      <% @user.comments.each do |comment| %>
+        <div class="col-xs-12 col-md-8">
+          <h4 class="media-heading"><strong>
+            <%= link_to comment.post.title, topic_post_path(comment.post), class: "post-title"%>
+          </strong></h4>
+          <%= render partial: 'comments/comment', locals: { comment: comment } %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12">
+    <% if @user.favorites.empty? %>
+      <h2><%= @user.name %>'s likes <br>
+        <small><%= @user.name %> has not favorited any posts yet.</small>
+      </h2>
+    <% else %>
+      <h2>Posts <%= @user.name %> likes</h2>
+      <% @user.favorites.each do |favorite| %>
+        <div class="col-xs-12 col-md-8">
+          <%= render partial: 'posts/post_info', locals: { post: favorite.post } %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  
 </div>
-
-<h2>Posts</h2>
-<%= render @user.posts %>
-
-<h2>Comments</h2>
-<%= render @user.comments %>

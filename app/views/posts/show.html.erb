@@ -14,9 +14,10 @@
       <strong class="post-title"><%= @post.title %> </strong><br>
       <small><%= @post.body %></small>
     </h2>
-    
-
-    <p>submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %></p>
+    <small>
+      <%= pluralize(@post.comments.count, "comment")%> | 
+      Submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, user_path(@post.user) %>
+    </small>
   </div>
 </div>
 

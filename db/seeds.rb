@@ -2,9 +2,9 @@ require 'random_data'
 
 
 # Create Topics
-50.times do
+50.times do |i|
   Topic.create!(
-    name:        RandomData.random_sentence,
+    name:        "Topic #{i}",
     description: RandomData.random_paragraph
   )
 end
@@ -46,10 +46,10 @@ member = User.create!(
 users = User.all
 
 # Create Posts
-50.times do
+50.times do |i|
   post = Post.create!(
   	topic: topics.sample,
-    title:  RandomData.random_sentence,
+    title:  "A random post #{i}",
     body:   RandomData.random_paragraph,
     user: users.sample
   )

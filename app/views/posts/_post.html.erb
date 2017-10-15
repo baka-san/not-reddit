@@ -5,12 +5,9 @@
     </div>
     
     <div class="col-xs-11 col-xs-push-1 col-sm-push-0 posts">
-      <h4 class="media-heading"><strong>
-        <%= link_to post.title, topic_post_path(post.topic, post), class: "post-title"%></strong>
-      </h4>
-      <small>
-        submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %> <br>
-      </small>
+      <%= render partial: 'posts/post_info', locals: { post: post } %>
     </div>
   </div>
 </div>
+
+

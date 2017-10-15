@@ -1,0 +1,9 @@
+<h4 class="media-heading"><strong>
+  <%= link_to post.title, topic_post_path(post.topic, post), class: "post-title"%></strong>
+
+  <br>
+  <small>
+    <%= pluralize(post.comments.count, "comment") %><br>
+    submitted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, user_path(post.user) %> <br>
+  </small>
+</h4>
