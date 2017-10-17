@@ -9,24 +9,25 @@
 $title-color: rgb(51,122,196);
 $button-color:  rgb(51,122,196);
 
-.post-info {
+.posts-show {
 
-  .voting-controls {
-    margin-top: 20px;
+  .post-info {
+
+    .voting-controls {
+      margin-top: 20px;
+    }
+
+    .post-title {
+      color: $title-color;
+    }
   }
 
-  .post-title {
-    color: $title-color;
+  .comments-section .col{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
-  // .post-details {
-  //   margin-left: 20px;
-  // }
 }
 
-.post-body {
-  .comment-details {
-    margin-left: 5px;
-  }
-}
+
 

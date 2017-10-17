@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .comment-container {
   margin-top: 0px !important;
+  margin-bottom: 10px !important;
+
+  * {
+    // vertical-align: top !important;
+  }
 }
