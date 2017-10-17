@@ -1,5 +1,5 @@
 <p class="page-path">
-  <%= link_to "topics", topics_path %> 
+  <%= link_to "Topics", topics_path %> 
   > <%= link_to @post.topic.name, @post.topic %> 
   > <%= @post.title %> 
 </p> 
@@ -12,7 +12,7 @@
   <div class="col-xs-10 col-xs-push-1 col-md-11 col-md-push-0 post-details">
     <h2>
       <strong class="post-title"><%= @post.title %> </strong><br>
-      <small><%= @post.body %></small>
+      <small><%= simple_format(@post.body) %></small>
     </h2>
     <small>
       <%= pluralize(@post.comments.count, "comment")%> | 

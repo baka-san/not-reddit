@@ -1,12 +1,13 @@
 <p class="page-path">
-  <%= link_to "topics", topics_path %> 
+  <%= link_to "Topics", topics_path %> 
   > <%= @topic.name %> 
 </p> 
 
 <div class="row topic-info">
   <div class="col-xs-12">
     <h1 class="topic-title"><%= @topic.name %></h1>
-    <p class="lead"><%= @topic.description %></p>
+    <!-- <p class="lead"><%= @topic.description %></p> -->
+    <%= simple_format(@topic.description, class: 'lead') %>
 
     <% if user_is_authorized_for_topics? %>
       <div class="user-edit-controls">
