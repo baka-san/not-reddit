@@ -1,24 +1,29 @@
 $title-color: rgb(51,122,196);
 $button-color:  rgb(51,122,196);
 
+.voting-arrows {
+  padding-left: 0px !important;
+  width: fit-content !important;
 
-.voting-arrows .glyphicon {
-  color: $button-color;
+  .glyphicon {
+    color: $button-color;
+  }
+
 }
 
 .points-up {
   color: green;
-  padding-left: 2px !important;
+  // padding-left: 2px !important;
 }
 
 .points-down {
   color: red;
-  padding-left: 2px !important;
+  // padding-left: 2px !important;
 }
 
 // Fix vertical align of total points
 .total-points {
-  padding-right: 0px !important;
+  padding-left: 5px !important;
 
   * {
     margin: 0px;

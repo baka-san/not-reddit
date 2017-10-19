@@ -1,10 +1,13 @@
-<p class="page-path">
-  <%= link_to "Topics", topics_path %> 
-  > <%= @topic.name %> 
-</p> 
-
-<div class="row topic-info">
+<div class="row topics-show">
+    
   <div class="col-xs-12">
+    <p class="page-path">
+      <%= link_to "Topics", topics_path %> 
+      > <%= @topic.name %> 
+    </p> 
+  </div>
+
+  <div class="col-xs-12 topic-info">
     <h1 class="topic-title"><%= @topic.name %></h1>
     <!-- <p class="lead"><%= @topic.description %></p> -->
     <%= simple_format(@topic.description, class: 'lead') %>
@@ -16,13 +19,14 @@
       </div>
     <% end %>
   </div>  
-</div>
+  
+  <div class="topic-main">
+    <div class="col-xs-12 col-md-8">
+      <%= render @topic.posts %>
+    </div>
+    <div class="col-xs-12 col-md-4 col-md-push-2">
+      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
+    </div>
+  </div>
 
-<div class="row topic-main">
-  <div class="col-xs-12 col-md-8">
-    <%= render @topic.posts %>
-  </div>
-  <div class="col-xs-12 col-md-4 col-md-push-2">
-    <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
-  </div>
 </div>

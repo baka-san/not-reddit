@@ -20,36 +20,49 @@ $button-color:  rgb(51,122,196);
   align-items: flex-end !important;
 }
 
-// ===========================
-
-.topic-info {
-  .topic-title {
-    color: $title-color;
-  }
-
-  .user-edit-controls {
-    margin-top: -10px;
-    margin-bottom: 20px;
-  }
+.horizontal-center {
+  // display: flex !important;
+  // justify-content: center !important;
+  // flex-wrap: wrap !important;
+  display: inline !important;
+  text-align: center !important;
 }
 
-.topic-main {
+// ===========================
 
-  .voting-controls > * {
-    padding-left: 0px !important;  
+.topics-show {
+
+  .topic-info {
+    .topic-title {
+      color: $title-color;
+    }
+
+    .user-edit-controls {
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
   }
 
-  .voting-controls {
-    padding-right: 0px !important;
-  }
+  .topic-main {
 
-  .posts {
-    // height: 100px !important;
-    padding-top: 8px;
-    // display: flex;
+    .voting-controls {
+      padding-left: 0px !important;
+    }
 
-    // * {
-    //   height: 50px !important;
-    // }
+    .voting-controls > * {
+      padding: 0px !important;  
+    }
+
+
+
+    .posts {
+      // height: 100px !important;
+      // padding-top: 8px;
+      // display: flex;
+
+      // * {
+      //   height: 50px !important;
+      // }
+    } 
   }
 }

@@ -1,1 +1,1 @@
-## Bloccit: A Ruby on Rails app where people can post, vote on, share, and save links and comments. 
+## Not Reddit is a place where you can share links and discuss rad topics with neckbeards.
