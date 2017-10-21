@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$title-color: rgb(51,122,196);
-$button-color:  rgb(51,122,196);
+// $title-color: rgb(51,122,196);
+// $button-color:  rgb(51,122,196);
 
 .path-page {
   color: $title-color !important;
@@ -12,7 +12,6 @@ $button-color:  rgb(51,122,196);
 .vertical-center {
   display: flex !important;
   align-items: center !important;
-  // justify-content: center !important;
 }
 
 .vertical-bottom {
@@ -21,11 +20,11 @@ $button-color:  rgb(51,122,196);
 }
 
 .horizontal-center {
-  // display: flex !important;
-  // justify-content: center !important;
+  display: flex !important;
+  justify-content: center !important;
   // flex-wrap: wrap !important;
-  display: inline !important;
-  text-align: center !important;
+  // display: inline !important;
+  // text-align: center !important;
 }
 
 // ===========================
@@ -46,23 +45,18 @@ $button-color:  rgb(51,122,196);
   .topic-main {
 
     .voting-controls {
+      // padding-right: 0px !important;
       padding-left: 0px !important;
     }
 
     .voting-controls > * {
-      padding: 0px !important;  
+      // padding: 0px !important;  
     }
 
-
-
     .posts {
-      // height: 100px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
       // padding-top: 8px;
-      // display: flex;
-
-      // * {
-      //   height: 50px !important;
-      // }
     } 
   }
 }

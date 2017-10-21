@@ -1,15 +1,14 @@
   <div class="vertical-center">
-
-    <div class="col-xs-1 voting-arrows text-center">
-        <div><%= link_to " ", post_up_vote_path(post), class: " glyphicon glyphicon-chevron-up", method: :post %></div>
-        <div class="points-up"><strong><%= post.up_votes %></strong></div>
-        <div class="points-down "><strong class=""><%= post.down_votes %></strong></div>
-        <div><%= link_to " ", post_down_vote_path(post), class: 'glyphicon glyphicon-chevron-down', method: :post %></div>
-    </div>
-
-    <div class="col-xs-11 total-points">
+    
+    <div class="col-xs-6 total-points">
       <h4><strong class=""><%= post.points %></strong></h4>
     </div>
 
+    <div class="col-xs-6 voting-arrows text-center">
+        <div><%= link_to " ", post_up_vote_path(post), class: " glyphicon glyphicon-chevron-up", method: :post %></div>
+        <div class="points-up"><strong><%= post.up_votes %></strong></div>
+        <div class="points-down "><strong><%= post.down_votes %></strong></div>
+        <div><%= link_to " ", post_down_vote_path(post), class: 'glyphicon glyphicon-chevron-down', method: :post %></div>
+    </div>
 
   </div>
