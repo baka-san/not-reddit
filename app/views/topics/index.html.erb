@@ -1,16 +1,21 @@
 <div class="row topics-index">
   
-  <div class="col-xs-12">
-    <h1>Topics</h1>
-  </div>
-
-    <div class="col-xs-12 col-md-8">
-      <%= render @topics %>
+  <div class="col-xs-12 col-md-8 vertical-bottom">
+    <div class="col-xs-8">
+      <h1>Topics</h1>
     </div>
+
     <% if user_is_authorized_for_topics? %>
-      <div class="col-xs-12 col-md-4">
-        <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+      <div class="col-xs-4 new-topic-button">
+        <%= link_to "New Topic", new_topic_path, class: 'btn btn-success pull-right' %>
       </div>
     <% end %>
+  </div>
+
+
+  <div class="col-xs-12 col-md-8">
+    <%= render @topics %>
+  </div>
+
 
 </div>

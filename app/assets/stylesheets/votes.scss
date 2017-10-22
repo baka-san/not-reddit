@@ -1,6 +1,12 @@
 // $title-color: rgb(51,122,196);
 // $button-color:  rgb(51,122,196);
 
+.voting-controls {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+
+}
+
 .voting-arrows {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -34,6 +40,10 @@
     * { 
       font-size: 14px !important;
     }
+  }
+
+  .voting-controls {
+    padding-right: 15px !important;
   }
 
 }

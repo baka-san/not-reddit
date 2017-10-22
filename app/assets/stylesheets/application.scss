@@ -61,4 +61,20 @@ textarea {
   resize: none;
 }
 
+.vertical-center {
+  display: flex !important;
+  align-items: center !important;
+}
 
+.vertical-bottom {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
+.horizontal-center {
+  display: flex !important;
+  justify-content: center !important;
+  // flex-wrap: wrap !important;
+  // display: inline !important;
+  // text-align: center !important;
+}
