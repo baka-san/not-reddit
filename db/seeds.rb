@@ -7,7 +7,7 @@ bloccit_support = Topic.create!(
 )
 
 # Create Topics
-50.times do |i|
+20.times do |i|
   Topic.create!(
     name:        "Topic #{i}",
     description: RandomData.random_paragraph
@@ -85,8 +85,8 @@ As far as the Spanish problem goes.. I disabled all my firefox extensions, clear
 )
 
 spanish.update_attribute(:created_at, rand(10.minutes .. 10.days).ago)
-rand(10..50).times { spanish.votes.create!(value: [-1, 1].sample, user: users.sample) }
-rand(30).times { spanish.votes.create!(value: 1, user: users.sample) }
+rand(10..30).times { spanish.votes.create!(value: [-1, 1].sample, user: users.sample) }
+rand(20).times { spanish.votes.create!(value: 1, user: users.sample) }
 
 # Create Post bloccit
 
@@ -98,8 +98,8 @@ cloud = Post.create!(
 )
 
 cloud.update_attribute(:created_at, rand(10.minutes .. 10.days).ago)
-rand(10..50).times { cloud.votes.create!(value: [-1, 1].sample, user: users.sample) }
-rand(30).times { cloud.votes.create!(value: 1, user: users.sample) }
+rand(10..30).times { cloud.votes.create!(value: [-1, 1].sample, user: users.sample) }
+rand(20).times { cloud.votes.create!(value: 1, user: users.sample) }
 
 # Create Post caps lock
 caps_lock = Post.create!(
@@ -111,8 +111,8 @@ caps_lock = Post.create!(
 )
 
 caps_lock.update_attribute(:created_at, rand(10.minutes .. 10.days).ago)
-rand(10..50).times { caps_lock.votes.create!(value: [-1, 1].sample, user: users.sample) }
-rand(30).times { caps_lock.votes.create!(value: 1, user: users.sample) }
+rand(10..30).times { caps_lock.votes.create!(value: [-1, 1].sample, user: users.sample) }
+rand(20).times { caps_lock.votes.create!(value: 1, user: users.sample) }
 
 
 # Create Comments
