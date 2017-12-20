@@ -70,4 +70,3 @@ gem 'bcrypt'
 
 # Used for privatising API keys and passwords, environmental variables
 gem 'figaro', '1.0'
-

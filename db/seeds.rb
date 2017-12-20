@@ -1,7 +1,7 @@
 require 'random_data'
 
 # Funny Topic
-bloccit_support = Topic.create!(
+not_reddit_support = Topic.create!(
   name:        "Technical Support",
   description: "We live to serve. Ask us for help on anything tech related!"
 )
@@ -67,17 +67,17 @@ posts = Post.all
 
 # Create spanish Post
 spanish = Post.create!(
-  topic: bloccit_support,
-  title:  "HELP bloccit turned spanish and i cannot undo it!",
-  body:   "5 min ago my bloccit all turned spanish....all the tabs, preferences..etc. I went into preferences and made sure they were checked to english....they were....what is going on? I cant read spanish so I am in need of some help here....i am asking you b/c I cannot find the mod help link b/c I cannot read it.
+  topic: not_reddit_support,
+  title:  "HELP not reddit turned spanish and i cannot undo it!",
+  body:   "5 min ago my Not Reddit all turned spanish....all the tabs, preferences..etc. I went into preferences and made sure they were checked to english....they were....what is going on? I cant read spanish so I am in need of some help here....i am asking you b/c I cannot find the mod help link b/c I cannot read it.
 
-  UPDATE- ok- it must have something to do with firefox. And to all of you telling me how to change lang. preference, OF COURSE I TRIED THAT before I posted. On IE all is normal. On my desktop all is normal. On my netbook, using firefox, it is a taco show. I ran the page through google translator and I especially enjoy the rick roll. So anyone know how to un-spanish bloccit in firefox? This is the only page it is happening on.
+  UPDATE- ok- it must have something to do with firefox. And to all of you telling me how to change lang. preference, OF COURSE I TRIED THAT before I posted. On IE all is normal. On my desktop all is normal. On my netbook, using firefox, it is a taco show. I ran the page through google translator and I especially enjoy the rick roll. So anyone know how to un-spanish Not Reddit in firefox? This is the only page it is happening on.
 
 EDIT- I must admit this is hilarious. I wish i had paid more attention in spanish class....
 
 UPDATE- So I wake up this morning to about 1500 replies in my inbox that I cannot read. And then I run them through Google translator and most of them say stuff like 'the dog is in my pants' and 'where is the library'.
 
-Thanks, bloccit.
+Thanks, Not Reddit.
 
 As far as the Spanish problem goes.. I disabled all my firefox extensions, cleared all my cookies and restarted it all again. THE SPANISH IS GONE! I do not know what possessed my computer to run for the border, but I am glad it is back. :)
 ",
@@ -88,10 +88,10 @@ spanish.update_attribute(:created_at, rand(10.minutes .. 10.days).ago)
 rand(10..30).times { spanish.votes.create!(value: [-1, 1].sample, user: users.sample) }
 rand(20).times { spanish.votes.create!(value: 1, user: users.sample) }
 
-# Create Post bloccit
+# Create Post Not Reddit
 
 cloud = Post.create!(
-  topic: bloccit_support,
+  topic: not_reddit_support,
   title:  "how to download things innto clouds",
   body:   "i REALLY wanna download things into clouds. help guys..",
   user: grant
@@ -103,7 +103,7 @@ rand(20).times { cloud.votes.create!(value: 1, user: users.sample) }
 
 # Create Post caps lock
 caps_lock = Post.create!(
-  topic: bloccit_support,
+  topic: not_reddit_support,
   title:  "OMG HELP ALL OF MY LETTERS ARE REALLY BIG!!!!",
   body:   "IDK WHATS HAPPENEING BUT ALL OF MY LETTERS GOT BIG ALL OF THE SUDDEN!!! 
   SERIOUSLY WHY IS THIS HAPPENING PLZ FIX IT!!!",
@@ -139,7 +139,7 @@ Comment.create!(
 
 Comment.create!(
   post: spanish,
-  body: "Jajaja hasta los admins trollean en bloccit, toma un voto arriba, ningún tema en bloccit habia tenido tantos votos en español soy tan feliz",
+  body: "Jajaja hasta los admins trollean en Not Reddit, toma un voto arriba, ningún tema en Not Reddit habia tenido tantos votos en español soy tan feliz",
   user: users.sample
 )
 
@@ -165,7 +165,7 @@ Comment.create!(
   user: users.sample
 )
 
-# Create comment bloccit
+# Create comment Not Reddit
 Comment.create!(
   post: cloud,
   body: "its pretty easy
