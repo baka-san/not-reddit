@@ -45,3 +45,5 @@ The app is deployed on Heroku: https://not-reddit-heroku.herokuapp.com/
 - Start the server using `rails server`
 - Run the app on `localhost:3000`
 
+
+
