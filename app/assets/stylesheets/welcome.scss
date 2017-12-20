@@ -1,8 +1,48 @@
 .welcome-index {
-  
+
+  .description {
+
+    margin-top: 20px;
+
+    h2 {
+      padding: 0px;
+      margin: 10px 0px;
+    }
+
+    @media (min-width: 768px) {
+
+    }
+
+
+    .ion {
+      margin-top: 8px;
+      color: #428bca;
+      font-size: calc(5.0em + 5.0vw) !important;
+
+      @media (max-width: 768px) {
+      }
+    }
+
+    .food, .money, .beauty {
+      padding: 0;
+      text-align: center !important;
+    }
+
+    .ion-knife {
+      margin-right: 5px;
+    }
+
+    .ion-woman {
+      color: #ff4081;
+    }
+  }
+
 }
 
+
+
+
+
+
 .welcome-about {
-
-
 }
