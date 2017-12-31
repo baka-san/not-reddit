@@ -3,6 +3,8 @@ A place where you can share links and discuss rad topics with neckbeards.While N
 
 The app is deployed on Heroku: https://not-reddit-heroku.herokuapp.com/
 
+The source code is available at GitHub: https://github.com/baka-san/not-reddit
+
 ### Features
 - Guests can browse the site, except for private topics.
 - Guests are not allowed to change or delete anything.
