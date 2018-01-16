@@ -1,11 +1,10 @@
 # Not Reddit
+
 A place where you can share links and discuss rad topics with neckbeards.While Not Reddit may be navigated by guests, for the best experience, an account should be created. This provides the ability to create new posts, comment, upvote and downvote, favorite and follow posts receiving email notifications when another user comments, maintain a profile, as well as a few other features. 
 
-The app is deployed on Heroku: https://not-reddit-heroku.herokuapp.com/
+### [Bomb Blog Post](https://baka-san.github.io/portfolio/not-reddit/) / [Live Site](https://not-reddit-heroku.herokuapp.com/) 
 
-The source code is available at GitHub: https://github.com/baka-san/not-reddit
-
-### Features
+# Features
 - Guests can browse the site, except for private topics.
 - Guests are not allowed to change or delete anything.
 - Users can sign up for a free account.
@@ -22,7 +21,7 @@ The source code is available at GitHub: https://github.com/baka-san/not-reddit
 - Admins can delete or edit any topic or post.
 - The development database is seeded automatically with users, topics and posts.
 
-### Setup and Configuration
+# Configuration
 **Languages and Frameworks:**
 - Ruby 2.4.0
 - Rails 5.1.3
@@ -37,10 +36,10 @@ The source code is available at GitHub: https://github.com/baka-san/not-reddit
 - SendGrid for email confirmation
 - Rspec and FactoryGirl for tests
 
-**Environment and Setup**
+**Setup:**
 - Figaro was used to set environmental variables and can be found in `config/application.yml`. For security reasons, this file has been replaced with an example file `config/application.example.yml` on github to demonstrate proper storage of environmental variables.
 
-### To Run Locally
+**To run locally:**
 - [Clone the repository](https://help.github.com/articles/cloning-a-repository/)
 - Run `bundle install` on command line
 - Create and migrate the SQLite database with `rake db:create` and `rake db:migrate`
